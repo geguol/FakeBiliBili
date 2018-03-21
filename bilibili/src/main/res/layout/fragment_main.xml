@@ -21,6 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <!--ViewPager 里面如果有滑动控件 也会让AppBarLayout 联动-->
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"

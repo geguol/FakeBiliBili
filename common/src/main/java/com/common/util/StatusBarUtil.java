@@ -44,6 +44,7 @@ public class StatusBarUtil {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //4.4及以上 全透明状态栏
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            // 这里content 也没有变成全屏啊！？
             ViewGroup content = (ViewGroup) activity.findViewById(android.R.id.content);
             //生成一个状态栏大小的矩形
             View statusBarView = createStatusBarView(activity, color);
@@ -69,9 +70,12 @@ public class StatusBarUtil {
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             //5.0 全透明实现
+            //SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN：Activity全屏显示，但状态栏不会被隐藏覆盖，状态栏依然可见，
+            //Activity顶端布局部分会被状态遮住。
             activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            // 状态栏覆盖在Activity 的上面；状态栏透明了，设置activity 顶部的区域颜色就可以了
             activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

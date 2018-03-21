@@ -83,7 +83,8 @@ public class MainActivity extends BaseActivity implements IBaseMvpActivity<MainP
 
     @Override
     public void initViewAndEvent() {
-        StatusBarUtil.setColorForDrawerLayout(this, getResources().getColor(R.color.theme_color_primary), mFrameLayout);
+        StatusBarUtil.setColorForDrawerLayout(this, getResources().getColor(R.color.theme_color_primary),
+                mFrameLayout);
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
