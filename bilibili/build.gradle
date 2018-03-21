@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'//apt 库
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion buildTools_version
 
     defaultConfig {
         applicationId "com.bilibili"
-        minSdkVersion 15
-        targetSdkVersion 26
+        minSdkVersion 16
+        targetSdkVersion 27
         versionCode 120
         versionName "1.2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -41,6 +42,6 @@ dependencies {
     //弹幕烈焰使
     compile 'com.github.ctiao:DanmakuFlameMaster:0.9.12'
 
-    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
+    apt "com.google.dagger:dagger-compiler:$dagger_version"
+    apt "com.jakewharton:butterknife-compiler:$butterknife_version"
 }

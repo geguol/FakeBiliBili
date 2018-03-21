@@ -1,5 +1,10 @@
 # FakeBiliBili
+Error:Could not find com.android.support:appcompat-v7:26.0.2.
+Required by:
+    project :common
 
+Please install the Android Support Repository from the Android SDK Manager.
+<a href="openAndroidSdkManager">Open Android SDK Manager</a>
 一款基于 **MVP+RxJava2+Retrofit+Dagger2+Butterknife+Fresco+MultitypeAdapter+MD** 的仿 B 站设计风格客户端
 
 > 项目地址：[https://github.com/TeamNB/FakeBiliBili](https://github.com/TeamNB/FakeBiliBili)

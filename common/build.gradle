@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.neenbedankt.android-apt'//apt 库
 android {
     compileSdkVersion 27
-    buildToolsVersion '26.0.2'
+    buildToolsVersion buildTools_version
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 27
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -51,6 +51,6 @@ dependencies {
     compile 'me.drakeet.multitype:multitype:3.4.2'
 
     testCompile 'junit:junit:4.12'
-    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
-    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+    apt "com.google.dagger:dagger-compiler:$dagger_version"
+    apt "com.jakewharton:butterknife-compiler:$butterknife_version"
 }
